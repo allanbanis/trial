@@ -12,27 +12,8 @@ import {
 
 @Component({
   selector: 'app-git-search',
-  animations: [
-  trigger('openClose', [
-    // ...
-    state('open', style({
-      height: '200px',
-      opacity: 1,
-      backgroundColor: 'yellow'
-    })),
-    state('closed', style({
-      height: '200px',
-      opacity: 1,
-      backgroundColor: 'green'
-    })),
-    transition('open => closed', [
-      animate('1s')
-    ]),
-    transition('closed => open', [
-      animate('1s')
-    ]),
-  ]),
-],
+  
+ 
 
   templateUrl: './git-search.component.html',
   styleUrls: ['./git-search.component.css']
@@ -49,7 +30,7 @@ export class GitSearchComponent implements OnInit {
     }
   
   ngOnInit() {
-    this.searchQuery="";
+    this.searchQuery="angular";
    this.gitSearch();
   }
   gitSearch = () => {
