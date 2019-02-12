@@ -1,13 +1,15 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
-
-<input name="query" placeholder="Enter Search Here" [(ngModel)]="searchQuery" >
-<button class="btn btn-secondary" type="submit" (click)="gitSearch()">Submit</button>
+<div class="jumbotron w-100">
+  <div class="row align-items-center w-100">
+    
+    <input name="query" placeholder="Enter Search Here" [(ngModel)]="searchQuery" class ="col-8 col-md-3 align-self-center ">
+    <button class="btn btn-secondary  col-5 col-md-2 " type="submit" (click)="gitSearch()">Submit</button>
+  </div>
+</div>
 <div *ngIf="searchResults; else elseBlock" class="container">
   <h3 class="total">Total Results: {{searchResults.total_count}}</h3>
   <ul class="list row">
     <li *ngFor="let result of searchResults.items" class=" col-12 ">
-        <img class="avatar d-none d-lg-block" [src]="result.owner.avatar_url" />
+        <img class="avatar h-100 w-25 d-none d-lg-block" [src]="result.owner.avatar_url" />
     <div>
       <a [href]="result.html_url">
         
@@ -22,6 +24,3 @@
   </ul>
 </div>
 <ng-template #elseBlock>Loading...</ng-template>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
